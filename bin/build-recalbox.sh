@@ -1,18 +1,5 @@
 #!/bin/bash -e
 
-if [[ -z "${RECALBOX_FORK}" ]];then
-  RECALBOX_FORK="recalbox"
-fi
-if [[ -z "${RECALBOX_BRANCH}" ]];then
-  RECALBOX_BRANCH="rb-4.1.X"
-fi
-if [[ -z "${RECALBOX_ARCH}" ]];then
-  RECALBOX_ARCH="rpi3"
-fi
-if [[ -z "${RECALBOX_CLEANBUILD}" ]];then
-  RECALBOX_CLEANBUILD="1"
-fi
-
 build=/usr/share/recalbox/build
 branch="${RECALBOX_BRANCH}"
 arch="${RECALBOX_ARCH}"
@@ -46,8 +33,8 @@ git pull --rebase origin $branch
 echo "Build recalbox for arch ${arch} (defconfig : recalbox-${arch}_defconfig)"
 make recalbox-${arch}_defconfig
 if [[ -z "${RECALBOX_SINGLE_PKG}" ]];then
-  make 
+  make
 else
-   echo "Only build package ${RECALBOX_SINGLE_PKG} for arch ${arch}" 
+   echo "Only build package ${RECALBOX_SINGLE_PKG} for arch ${arch}"
    make "${RECALBOX_SINGLE_PKG}"
 fi

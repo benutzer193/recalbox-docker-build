@@ -3,13 +3,13 @@ MAINTAINER Mika <mika@recalbox.com>
 
 # USER ENV
 # auto build recalbox when running
-ENV RECALBOX_AUTO_BUILD 1
+ENV RECALBOX_AUTO_BUILD 0
 # recalbox fork to pull
-ENV RECALBOX_FORK recalbox
+ENV RECALBOX_FORK benutzer193
 # recalbox github branch to compile
 ENV RECALBOX_BRANCH rb-4.1.X
 # recalbox target arch
-ENV RECALBOX_ARCH rpi3
+ENV RECALBOX_ARCH rpi2
 # clean before build when rebuilding
 ENV RECALBOX_CLEANBUILD 1
 
